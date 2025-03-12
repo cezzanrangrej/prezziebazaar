@@ -36,9 +36,12 @@ const NavBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center space-x-2">
-              <span className="text-2xl font-serif font-bold text-burgundy">Prezzie</span>
-              <span className="text-2xl font-serif font-bold text-gold">Bazaar</span>
+            <a href="#" className="flex items-center">
+              <img 
+                src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
+                className="h-12 md:h-16 transition-all duration-300"
+              />
             </a>
           </div>
           
@@ -86,6 +89,13 @@ const NavBar: React.FC = () => {
         )}
       >
         <nav className="space-y-8 text-center">
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+              alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
+              className="h-20 mx-auto"
+            />
+          </div>
           {navLinks.map((link) => (
             <a
               key={link.name}
