@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { initAnimations } from '@/utils/animations';
 
@@ -62,7 +61,7 @@ const Portfolio: React.FC = () => {
       title: 'Luxury Anniversary Box',
       description: 'A handcrafted box for a 25th wedding anniversary gift.',
       type: 'gift-boxes',
-      imageSrc: '/lovable-uploads/987aa27c-989e-4bed-a52e-a7f81090c42b.png'
+      imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png'
     },
     {
       id: 2,
