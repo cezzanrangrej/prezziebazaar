@@ -6,17 +6,26 @@ interface PortfolioItemProps {
   category: string;
   title: string;
   description: string;
+  imageSrc?: string;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description }) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc }) => {
   return (
     <div className="stagger-item opacity-0 group cursor-pointer">
       <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-            <span className="text-xl font-serif text-burgundy">PB</span>
+        {imageSrc ? (
+          <img 
+            src={imageSrc} 
+            alt={title} 
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+              <span className="text-xl font-serif text-burgundy">PB</span>
+            </div>
           </div>
-        </div>
+        )}
         <div className="absolute inset-0 bg-burgundy/70 opacity-0 group-hover:opacity-90 flex items-center justify-center transition-all duration-300">
           <p className="text-white font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
             View Project
@@ -52,7 +61,8 @@ const Portfolio: React.FC = () => {
       category: 'Gift Boxes',
       title: 'Luxury Anniversary Box',
       description: 'A handcrafted box for a 25th wedding anniversary gift.',
-      type: 'gift-boxes'
+      type: 'gift-boxes',
+      imageSrc: '/lovable-uploads/987aa27c-989e-4bed-a52e-a7f81090c42b.png'
     },
     {
       id: 2,
@@ -132,6 +142,7 @@ const Portfolio: React.FC = () => {
               category={item.category}
               title={item.title}
               description={item.description}
+              imageSrc={item.imageSrc}
             />
           ))}
         </div>
