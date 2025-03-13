@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { initAnimations } from '@/utils/animations';
 
@@ -6,36 +7,39 @@ interface PortfolioItemProps {
   title: string;
   description: string;
   imageSrc?: string;
+  link: string;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc }) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link }) => {
   return (
     <div className="stagger-item opacity-0 group cursor-pointer">
-      <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4">
-        {imageSrc ? (
-          <img 
-            src={imageSrc} 
-            alt={title} 
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-              <span className="text-xl font-serif text-burgundy">PB</span>
+      <a href={link} className="block">
+        <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4">
+          {imageSrc ? (
+            <img 
+              src={imageSrc} 
+              alt={title} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+                <span className="text-xl font-serif text-burgundy">PB</span>
+              </div>
             </div>
+          )}
+          <div className="absolute inset-0 bg-burgundy/70 opacity-0 group-hover:opacity-90 flex items-center justify-center transition-all duration-300">
+            <p className="text-white font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              View Project
+            </p>
           </div>
-        )}
-        <div className="absolute inset-0 bg-burgundy/70 opacity-0 group-hover:opacity-90 flex items-center justify-center transition-all duration-300">
-          <p className="text-white font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            View Project
-          </p>
         </div>
-      </div>
-      <div>
-        <span className="text-xs uppercase tracking-wider text-burgundy font-medium">{category}</span>
-        <h3 className="text-lg font-serif font-semibold mt-1">{title}</h3>
-        <p className="text-sm text-charcoal/70 mt-1">{description}</p>
-      </div>
+        <div>
+          <span className="text-xs uppercase tracking-wider text-burgundy font-medium">{category}</span>
+          <h3 className="text-lg font-serif font-semibold mt-1">{title}</h3>
+          <p className="text-sm text-charcoal/70 mt-1">{description}</p>
+        </div>
+      </a>
     </div>
   );
 };
@@ -61,42 +65,48 @@ const Portfolio: React.FC = () => {
       title: 'Luxury Anniversary Box',
       description: 'A handcrafted box for a 25th wedding anniversary gift.',
       type: 'gift-boxes',
-      imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png'
+      imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png',
+      link: '#project-luxury-anniversary-box'
     },
     {
       id: 2,
       category: 'Wedding',
       title: 'Royal Wedding Invitation',
       description: 'Custom designed invitations for a royal-themed wedding.',
-      type: 'wedding'
+      type: 'wedding',
+      link: '#project-royal-wedding-invitation'
     },
     {
       id: 3,
       category: 'Custom',
       title: 'Corporate Gift Package',
       description: 'Bespoke branded gifts for corporate clients.',
-      type: 'custom'
+      type: 'custom',
+      link: '#project-corporate-gift-package'
     },
     {
       id: 4,
       category: 'Gift Boxes',
       title: 'Birthday Surprise Box',
       description: 'A specially crafted birthday gift box with compartments.',
-      type: 'gift-boxes'
+      type: 'gift-boxes',
+      link: '#project-birthday-surprise-box'
     },
     {
       id: 5,
       category: 'Wedding',
       title: 'Wedding Favor Boxes',
       description: 'Elegant favor boxes for wedding guests.',
-      type: 'wedding'
+      type: 'wedding',
+      link: '#project-wedding-favor-boxes'
     },
     {
       id: 6,
       category: 'Custom',
       title: 'Personalized Memory Box',
       description: 'Custom memory box for preserving special moments.',
-      type: 'custom'
+      type: 'custom',
+      link: '#project-personalized-memory-box'
     }
   ];
 
@@ -142,6 +152,7 @@ const Portfolio: React.FC = () => {
               title={item.title}
               description={item.description}
               imageSrc={item.imageSrc}
+              link={item.link}
             />
           ))}
         </div>
