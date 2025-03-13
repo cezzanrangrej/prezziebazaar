@@ -62,16 +62,6 @@ const NavBar: React.FC = () => {
             ))}
           </nav>
           
-          {/* Contact button */}
-          <div className="hidden md:block">
-            <a
-              href="#contact"
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-burgundy hover:bg-burgundy-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-burgundy transition-all"
-            >
-              Get a Quote
-            </a>
-          </div>
-          
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -114,13 +104,6 @@ const NavBar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-burgundy hover:bg-burgundy-light focus:outline-none"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Get a Quote
-          </a>
         </nav>
       </div>
     </header>

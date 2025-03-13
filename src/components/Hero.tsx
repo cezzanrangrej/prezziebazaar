@@ -78,12 +78,15 @@ const Hero: React.FC = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/20 rounded-full filter blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-burgundy/10 rounded-full filter blur-3xl"></div>
             
-            {/* This would be replaced with an actual product image */}
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-white/50 shadow-2xl border border-white/60 backdrop-blur-sm">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
-                    <span className="text-4xl font-serif text-burgundy">PB</span>
+                    <img 
+                      src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                      alt="Prezzie Bazaar Logo" 
+                      className="w-24 h-24 object-contain"
+                    />
                   </div>
                   <h3 className="text-xl font-medium text-charcoal">Elegant Gift Box</h3>
                   <p className="text-sm text-charcoal/70 mt-2">Handcrafted with love</p>

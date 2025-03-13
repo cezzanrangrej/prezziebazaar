@@ -1,6 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { initAnimations } from '@/utils/animations';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
 
 interface PortfolioItemProps {
   category: string;
@@ -12,26 +13,32 @@ interface PortfolioItemProps {
 
 const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link }) => {
   return (
-    <div className="stagger-item opacity-0 group cursor-pointer">
-      <a href={link} className="block">
-        <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4">
+    <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
+      <a href={link}>
+        <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
               src={imageSrc} 
               alt={title} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                <span className="text-xl font-serif text-burgundy">PB</span>
+                <img 
+                  src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                  alt="Prezzie Bazaar Logo" 
+                  className="w-10 h-10 object-contain"
+                />
               </div>
             </div>
           )}
           <div className="absolute inset-0 bg-burgundy/70 opacity-0 group-hover:opacity-90 flex items-center justify-center transition-all duration-300">
-            <p className="text-white font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              View Project
-            </p>
+            <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="text-xl font-serif font-semibold">{title}</h3>
+              <p className="text-sm mt-2">{description}</p>
+              <span className="inline-block mt-3 px-4 py-2 border border-white/50 rounded-full text-sm">View Project</span>
+            </div>
           </div>
         </div>
         <div>
@@ -46,9 +53,42 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
 
 const Portfolio: React.FC = () => {
   const [filter, setFilter] = useState('all');
+  const portfolioRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     initAnimations();
+    
+    // Custom scroll animation for portfolio items
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const items = entry.target.querySelectorAll('.portfolio-item');
+            items.forEach((item, index) => {
+              setTimeout(() => {
+                (item as HTMLElement).style.opacity = '1';
+                (item as HTMLElement).style.transform = 'translateY(0)';
+              }, index * 150);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
+      }
+    );
+    
+    if (portfolioRef.current) {
+      observer.observe(portfolioRef.current);
+    }
+    
+    return () => {
+      if (portfolioRef.current) {
+        observer.unobserve(portfolioRef.current);
+      }
+    };
   }, [filter]);
 
   const filters = [
@@ -115,7 +155,7 @@ const Portfolio: React.FC = () => {
     : portfolioItems.filter(item => item.type === filter);
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-white overflow-hidden">
       <div className="section-container">
         <div className="text-center mb-16 animate-on-scroll">
           <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 inline-block">
@@ -144,7 +184,10 @@ const Portfolio: React.FC = () => {
           ))}
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-container">
+        <div 
+          ref={portfolioRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {filteredItems.map((item) => (
             <PortfolioItem
               key={item.id}
