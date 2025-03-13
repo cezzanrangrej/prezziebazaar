@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
@@ -91,8 +90,8 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex">
                 <span className="text-gray-400">Email:</span>
-                <a href="mailto:hello@prezziebazaar.com" className="text-white ml-2 hover:text-gold transition-colors">
-                  hello@prezziebazaar.com
+                <a href="mailto:prezziebazaar@gmail.com" className="text-white ml-2 hover:text-gold transition-colors">
+                  prezziebazaar@gmail.com
                 </a>
               </li>
               <li className="flex">
