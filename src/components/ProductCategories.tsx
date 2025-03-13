@@ -8,19 +8,21 @@ interface ProductCategoryProps {
   title: string;
   description: string;
   index: number;
+  link: string;
 }
 
-const ProductCategory: React.FC<ProductCategoryProps> = ({ icon, title, description, index }) => {
+const ProductCategory: React.FC<ProductCategoryProps> = ({ icon, title, description, index, link }) => {
   return (
-    <div 
-      className="stagger-item opacity-0 bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
+    <a 
+      href={link}
+      className="stagger-item opacity-0 bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-100 group block"
     >
       <div className="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center text-burgundy mb-4 group-hover:bg-burgundy group-hover:text-white transform transition-all duration-300 group-hover:scale-110">
         {icon}
       </div>
       <h3 className="text-xl font-serif font-semibold mb-2 group-hover:text-burgundy transition-colors">{title}</h3>
       <p className="text-charcoal/70 text-sm">{description}</p>
-    </div>
+    </a>
   );
 };
 
@@ -33,27 +35,32 @@ const ProductCategories: React.FC = () => {
     {
       icon: <Gift className="h-6 w-6" />,
       title: "Gift Boxes",
-      description: "Handcrafted gift boxes for special occasions, designed with love and attention to detail."
+      description: "Handcrafted gift boxes for special occasions, designed with love and attention to detail.",
+      link: "#gift-boxes"
     },
     {
       icon: <Package className="h-6 w-6" />,
       title: "Organizers",
-      description: "Beautifully designed organizers to keep your precious items safe and well-arranged."
+      description: "Beautifully designed organizers to keep your precious items safe and well-arranged.",
+      link: "#organizers"
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Wedding Invitations",
-      description: "Elegant, customized wedding invitations that reflect your unique love story."
+      description: "Elegant, customized wedding invitations that reflect your unique love story.",
+      link: "#wedding-invitations"
     },
     {
       icon: <ShoppingBag className="h-6 w-6" />,
       title: "Brand Merchandise",
-      description: "Bespoke brand merchandise that elevates your corporate identity."
+      description: "Bespoke brand merchandise that elevates your corporate identity.",
+      link: "#brand-merchandise"
     },
     {
       icon: <Tag className="h-6 w-6" />,
       title: "Custom Cards",
-      description: "Personalized cards for birthdays, anniversaries, and special moments in life."
+      description: "Personalized cards for birthdays, anniversaries, and special moments in life.",
+      link: "#custom-cards"
     }
   ];
 
@@ -82,6 +89,7 @@ const ProductCategories: React.FC = () => {
               icon={category.icon}
               title={category.title}
               description={category.description}
+              link={category.link}
             />
           ))}
         </div>
