@@ -13,12 +13,12 @@ interface ProductCategoryProps {
 const ProductCategory: React.FC<ProductCategoryProps> = ({ icon, title, description, index }) => {
   return (
     <div 
-      className={`stagger-item opacity-0 bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100`}
+      className="stagger-item opacity-0 bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
     >
-      <div className="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center text-burgundy mb-4">
+      <div className="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center text-burgundy mb-4 group-hover:bg-burgundy group-hover:text-white transform transition-all duration-300 group-hover:scale-110">
         {icon}
       </div>
-      <h3 className="text-xl font-serif font-semibold mb-2">{title}</h3>
+      <h3 className="text-xl font-serif font-semibold mb-2 group-hover:text-burgundy transition-colors">{title}</h3>
       <p className="text-charcoal/70 text-sm">{description}</p>
     </div>
   );
@@ -64,8 +64,8 @@ const ProductCategories: React.FC = () => {
       
       <div className="section-container relative z-10">
         <div className="text-center mb-16 animate-on-scroll">
-          <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 inline-block">
-            Our Offerings
+          <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 inline-block px-4 py-2 rounded-full">
+            <span className="text-xs sm:text-sm font-medium">Our Offerings</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Exquisite Handmade Products</h2>
           <p className="text-charcoal/70 max-w-2xl mx-auto">

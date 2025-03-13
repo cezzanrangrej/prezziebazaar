@@ -46,11 +46,11 @@ const Hero: React.FC = () => {
       
       <div className="container mx-auto px-4 md:px-8 z-10 flex flex-col md:flex-row items-center justify-between">
         <div className="hero-content w-full md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
-          <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 animate-fade-in">
-            Handcrafted in Jaipur, India
+          <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 inline-block px-4 py-2 rounded-full animate-fade-in">
+            <span className="text-xs sm:text-sm font-medium">Handcrafted in Jaipur, India</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 animate-fade-in">
-            <span className="block">Artisanal Gift Boxes</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 animate-fade-in">
+            <span className="block text-charcoal">Artisanal Gift Boxes</span>
             <span className="block text-burgundy">& Wedding Invitations</span>
           </h1>
           <p className="text-lg md:text-xl text-charcoal/80 mb-8 max-w-lg animate-delay-100">
@@ -64,12 +64,6 @@ const Hero: React.FC = () => {
               Explore Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
-            <a 
-              href="#contact" 
-              className="inline-flex items-center justify-center px-6 py-3 border border-burgundy rounded-md text-base font-medium text-burgundy bg-transparent hover:bg-burgundy/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-burgundy transition-all"
-            >
-              Request Custom Design
-            </a>
           </div>
         </div>
         
@@ -81,11 +75,11 @@ const Hero: React.FC = () => {
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-white/50 shadow-2xl border border-white/60 backdrop-blur-sm">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                  <div className="w-40 h-40 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                       alt="Prezzie Bazaar Logo" 
-                      className="w-24 h-24 object-contain"
+                      className="w-32 h-32 object-contain"
                     />
                   </div>
                   <h3 className="text-xl font-medium text-charcoal">Elegant Gift Box</h3>
