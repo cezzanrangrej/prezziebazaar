@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { initAnimations } from '@/utils/animations';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import { ShoppingBag, Gift, Tag } from 'lucide-react';
 
 interface PortfolioItemProps {
   category: string;
@@ -25,11 +26,16 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
-                  alt="Prezzie Bazaar Logo" 
-                  className="w-10 h-10 object-contain"
-                />
+                {category === 'Carry Bags' && <ShoppingBag className="w-8 h-8 text-burgundy" />}
+                {category === 'Jewellery Boxes' && <Gift className="w-8 h-8 text-burgundy" />}
+                {category === 'Accessories' && <Tag className="w-8 h-8 text-burgundy" />}
+                {!['Carry Bags', 'Jewellery Boxes', 'Accessories'].includes(category) && (
+                  <img 
+                    src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                    alt="Prezzie Bazaar Logo" 
+                    className="w-10 h-10 object-contain"
+                  />
+                )}
               </div>
             </div>
           )}
@@ -95,7 +101,10 @@ const Portfolio: React.FC = () => {
     { id: 'all', name: 'All Projects' },
     { id: 'gift-boxes', name: 'Gift Boxes' },
     { id: 'wedding', name: 'Wedding' },
-    { id: 'custom', name: 'Custom' }
+    { id: 'custom', name: 'Custom' },
+    { id: 'carry-bags', name: 'Carry Bags' },
+    { id: 'jewellery-boxes', name: 'Jewellery Boxes' },
+    { id: 'accessories', name: 'Accessories' }
   ];
 
   const portfolioItems = [
@@ -147,6 +156,55 @@ const Portfolio: React.FC = () => {
       description: 'Custom memory box for preserving special moments.',
       type: 'custom',
       link: '#project-personalized-memory-box'
+    },
+    // New items for the added categories
+    {
+      id: 7,
+      category: 'Carry Bags',
+      title: 'Elegant Paper Gift Bag',
+      description: 'Premium paper gift bags with custom printing and handles.',
+      type: 'carry-bags',
+      link: '#project-elegant-paper-gift-bag'
+    },
+    {
+      id: 8,
+      category: 'Carry Bags',
+      title: 'Luxury Shopping Tote',
+      description: 'High-end branded shopping bags for retail boutiques.',
+      type: 'carry-bags',
+      link: '#project-luxury-shopping-tote'
+    },
+    {
+      id: 9,
+      category: 'Jewellery Boxes',
+      title: 'Ring Presentation Box',
+      description: 'Elegant box designed specifically for engagement rings.',
+      type: 'jewellery-boxes',
+      link: '#project-ring-presentation-box'
+    },
+    {
+      id: 10,
+      category: 'Jewellery Boxes',
+      title: 'Multi-tier Jewelry Chest',
+      description: 'Handcrafted wooden chest with multiple compartments.',
+      type: 'jewellery-boxes',
+      link: '#project-multi-tier-jewelry-chest'
+    },
+    {
+      id: 11,
+      category: 'Accessories',
+      title: 'Custom Gift Tags',
+      description: 'Personalized tags to complement your gift packaging.',
+      type: 'accessories',
+      link: '#project-custom-gift-tags'
+    },
+    {
+      id: 12,
+      category: 'Accessories',
+      title: 'Premium Ribbon Collection',
+      description: 'High-quality satin and grosgrain ribbons in various widths.',
+      type: 'accessories',
+      link: '#project-premium-ribbon-collection'
     }
   ];
 
