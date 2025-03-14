@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { initAnimations } from '@/utils/animations';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
@@ -204,7 +205,8 @@ const Portfolio: React.FC = () => {
       title: 'Custom Gift Tags',
       description: 'Personalized tags to complement your gift packaging.',
       type: 'accessories',
-      link: '#project-custom-gift-tags'
+      link: '#project-custom-gift-tags',
+      externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x'
     },
     {
       id: 12,
