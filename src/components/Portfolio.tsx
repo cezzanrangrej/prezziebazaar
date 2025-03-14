@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { initAnimations } from '@/utils/animations';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
@@ -10,12 +9,20 @@ interface PortfolioItemProps {
   description: string;
   imageSrc?: string;
   link: string;
+  externalLink?: string;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link }) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link, externalLink }) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (externalLink) {
+      e.preventDefault();
+      window.open(externalLink, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
-      <a href={link}>
+      <a href={link} onClick={handleClick}>
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
@@ -43,7 +50,9 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
             <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <h3 className="text-xl font-serif font-semibold">{title}</h3>
               <p className="text-sm mt-2">{description}</p>
-              <span className="inline-block mt-3 px-4 py-2 border border-white/50 rounded-full text-sm">View Project</span>
+              <span className="inline-block mt-3 px-4 py-2 border border-white/50 rounded-full text-sm">
+                {externalLink ? 'Visit Instagram' : 'View Project'}
+              </span>
             </div>
           </div>
         </div>
@@ -64,7 +73,6 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     initAnimations();
     
-    // Custom scroll animation for portfolio items
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -115,7 +123,8 @@ const Portfolio: React.FC = () => {
       description: 'A handcrafted box for a 25th wedding anniversary gift.',
       type: 'gift-boxes',
       imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png',
-      link: '#project-luxury-anniversary-box'
+      link: '#project-luxury-anniversary-box',
+      externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x'
     },
     {
       id: 2,
@@ -157,7 +166,6 @@ const Portfolio: React.FC = () => {
       type: 'custom',
       link: '#project-personalized-memory-box'
     },
-    // New items for the added categories
     {
       id: 7,
       category: 'Carry Bags',
@@ -254,6 +262,7 @@ const Portfolio: React.FC = () => {
               description={item.description}
               imageSrc={item.imageSrc}
               link={item.link}
+              externalLink={item.externalLink}
             />
           ))}
         </div>
