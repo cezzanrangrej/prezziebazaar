@@ -29,7 +29,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-charcoal">Phone</h3>
-                  <p className="mt-1 text-charcoal/70">+91 98765 43210</p>
+                  <p className="mt-1 text-charcoal/70">+91 99283 78286</p>
                 </div>
               </div>
               
@@ -50,8 +50,8 @@ const ContactForm: React.FC = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-charcoal">Workshop</h3>
                   <p className="mt-1 text-charcoal/70">
-                    Creative Hub, C-5<br />
-                    Raja Park, Jaipur<br />
+                    A-37,Laxmi Vihar, <br />
+                    Nandpuri,Bais Godam, Jaipur<br />
                     Rajasthan, India
                   </p>
                 </div>
@@ -64,9 +64,9 @@ const ContactForm: React.FC = () => {
               <HoverCard>
                 <HoverCardTrigger asChild>
                   <a 
-                    href="#" 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZIuhOc4JzOf51XxcBmcLh5zkjIduLIOY6GTVjvf4ySlI_w/viewform?usp=sharing" target='_blank' 
                     className="group block w-full transition-all duration-300 transform hover:scale-105"
-                    onClick={(e) => e.preventDefault()} // Remove this when you add your link
+                    // Remove this when you add your link
                   >
                     <div className="bg-cream hover:bg-gold/20 rounded-2xl p-8 shadow-md hover:shadow-xl border border-gold/20 transition-all duration-300">
                       <div className="flex flex-col items-center text-center">

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { initAnimations } from '@/utils/animations';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
-import { ShoppingBag, Gift, Tag } from 'lucide-react';
+import { ShoppingBag, Gift, Tag, ExternalLink } from 'lucide-react';
 
 interface PortfolioItemProps {
   category: string;
@@ -15,7 +15,8 @@ interface PortfolioItemProps {
 const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link }) => {
   return (
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
-      <a href={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
@@ -27,9 +28,9 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
                 {category === 'Carry Bags' && <ShoppingBag className="w-8 h-8 text-burgundy" />}
-                {category === 'Jewellery Boxes' && <Gift className="w-8 h-8 text-burgundy" />}
+                {category === 'Boxes' && <Gift className="w-8 h-8 text-burgundy" />}
                 {category === 'Accessories' && <Tag className="w-8 h-8 text-burgundy" />}
-                {!['Carry Bags', 'Jewellery Boxes', 'Accessories'].includes(category) && (
+                {!['Carry Bags', 'Boxes', 'Accessories'].includes(category) && (
                   <img 
                     src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                     alt="Prezzie Bazaar Logo" 
@@ -99,23 +100,23 @@ const Portfolio: React.FC = () => {
 
   const filters = [
     { id: 'all', name: 'All Projects' },
-    { id: 'gift-boxes', name: 'Gift Boxes' },
+    { id: 'gifts', name: 'Gifts' },
     { id: 'wedding', name: 'Wedding' },
     { id: 'custom', name: 'Custom' },
     { id: 'carry-bags', name: 'Carry Bags' },
-    { id: 'jewellery-boxes', name: 'Jewellery Boxes' },
+    { id: 'boxes', name: 'Boxes' },
     { id: 'accessories', name: 'Accessories' }
   ];
 
   const portfolioItems = [
     {
       id: 1,
-      category: 'Gift Boxes',
-      title: 'Luxury Anniversary Box',
-      description: 'A handcrafted box for a 25th wedding anniversary gift.',
-      type: 'gift-boxes',
-      imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png',
-      link: '#project-luxury-anniversary-box'
+      category: 'Custom',
+      title: 'Pamphlets,Tags & Stickers',
+      description: 'Get your customised pamplets, tags & stickers for every purpose.',
+      type: 'custom',
+      imageSrc: '1.jpg',
+      link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
     },
     {
       id: 2,
@@ -123,88 +124,99 @@ const Portfolio: React.FC = () => {
       title: 'Royal Wedding Invitation',
       description: 'Custom designed invitations for a royal-themed wedding.',
       type: 'wedding',
-      link: '#project-royal-wedding-invitation'
+      imageSrc: 'WhatsApp Image 2025-03-15 at 00.08.01_4214b9f2.jpg',
+      link: "https://drive.google.com/drive/folders/1KufJhzqWHo7DMl_cfUqeXqJZnkSfJDFv?usp=drive_link",
+      target: '_blank'
     },
     {
       id: 3,
-      category: 'Custom',
+      category: 'Gifts',
       title: 'Corporate Gift Package',
       description: 'Bespoke branded gifts for corporate clients.',
-      type: 'custom',
-      link: '#project-corporate-gift-package'
+      type: 'gifts',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 00.10.28_11cc942f.jpg',
+      link: "https://drive.google.com/drive/folders/1BOvD3DMQPgkmxknFFokse6U-BanWW9qh?usp=drive_link"
     },
     {
       id: 4,
-      category: 'Gift Boxes',
-      title: 'Birthday Surprise Box',
+      category: 'Gift',
+      title: 'Gift Hampers',
       description: 'A specially crafted birthday gift box with compartments.',
-      type: 'gift-boxes',
-      link: '#project-birthday-surprise-box'
+      type: 'gifts',
+      imageSrc: 'WhatsApp Image 2025-03-13 at 23.07.26_281ad9b2.jpg',
+      link: "https://drive.google.com/drive/folders/1UToBW9PweebmEYqfmgU1xid27GIXK0VD"
     },
     {
       id: 5,
-      category: 'Wedding',
-      title: 'Wedding Favor Boxes',
-      description: 'Elegant favor boxes for wedding guests.',
-      type: 'wedding',
-      link: '#project-wedding-favor-boxes'
+      category: 'Custom',
+      title: 'Menu Cards',
+      description: 'Elegant menu cards for your cafes & restaurent.',
+      type: 'custom',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 00.04.29_18d3aa57.jpg',
+      link: "https://drive.google.com/drive/folders/1LFrC-iwk4l0VHADtN8jUgzgBZHVRIzn4?usp=drive_link"
     },
     {
       id: 6,
       category: 'Custom',
-      title: 'Personalized Memory Box',
+      title: 'Personal Diaries & Planers',
       description: 'Custom memory box for preserving special moments.',
       type: 'custom',
-      link: '#project-personalized-memory-box'
+      imageSrc: 'WhatsApp Image 2025-03-15 at 00.17.43_f88e5491.jpg',
+      link: "https://drive.google.com/drive/folders/12h1rKBKIEaeLvg6-Z_lu0abx6VX5TO4t?usp=drive_link"
     },
-    // New items for the added categories
     {
       id: 7,
-      category: 'Carry Bags',
-      title: 'Elegant Paper Gift Bag',
+      category: 'Boxes',
+      title: 'Rigid Box',
       description: 'Premium paper gift bags with custom printing and handles.',
-      type: 'carry-bags',
-      link: '#project-elegant-paper-gift-bag'
+      type: 'boxes',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 00.35.52_2dd6ac79.jpg',
+      link: "https://drive.google.com/drive/folders/177mp-Fz6XdnmO5jGdLxOiYNej883Dv7J"
     },
     {
       id: 8,
       category: 'Carry Bags',
-      title: 'Luxury Shopping Tote',
+      title: 'Paper Bags',
       description: 'High-end branded shopping bags for retail boutiques.',
       type: 'carry-bags',
-      link: '#project-luxury-shopping-tote'
+      imageSrc: 'WhatsApp Image 2025-03-15 at 17.02.30_4002bc08.jpg',
+      link: "https://drive.google.com/drive/folders/1AkCrAeAqfisAnZd9EP8kZAsz_kCO8qe0"
     },
     {
       id: 9,
-      category: 'Jewellery Boxes',
-      title: 'Ring Presentation Box',
+      category: 'Boxes',
+      title: 'Jewellery Boxes',
       description: 'Elegant box designed specifically for engagement rings.',
-      type: 'jewellery-boxes',
-      link: '#project-ring-presentation-box'
+      type: 'boxes',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 05.03.28_78449e28.jpg',
+      link: "https://drive.google.com/drive/folders/1km61MaFm5ZcUlh-MTiawMMNOsh6KqHN3"
     },
     {
       id: 10,
-      category: 'Jewellery Boxes',
-      title: 'Multi-tier Jewelry Chest',
-      description: 'Handcrafted wooden chest with multiple compartments.',
-      type: 'jewellery-boxes',
-      link: '#project-multi-tier-jewelry-chest'
+      category: 'Accessories',
+      title: 'Accessories',
+      description: 'Handcrafted wooden box for your accessories.',
+      type: 'accessories',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 16.56.13_d4a7983c.jpg',
+      link: "https://drive.google.com/drive/folders/1IG6OvJNtB3QfVNM_wrmexCen7Vfisndu?usp=drive_link"
     },
     {
       id: 11,
-      category: 'Accessories',
-      title: 'Custom Gift Tags',
+      category: 'Custom',
+      title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
-      type: 'accessories',
-      link: '#project-custom-gift-tags'
+      type: 'custom',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.07_c1a51fea.jpg',
+      link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
     },
     {
       id: 12,
-      category: 'Accessories',
-      title: 'Premium Ribbon Collection',
+      category: 'Gifts',
+      title: 'Gift Envelopes',
       description: 'High-quality satin and grosgrain ribbons in various widths.',
-      type: 'accessories',
-      link: '#project-premium-ribbon-collection'
+      type: 'gifts',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.08_04c57302.jpg',
+      link: "https://drive.google.com/drive/folders/1bsKobcyEl1O4O8zCgxucUJOHVqeDmoGc?usp=drive_link"
     }
   ];
 

@@ -41,8 +41,8 @@ const ProductCategories: React.FC = () => {
     {
       icon: <Package className="h-6 w-6" />,
       title: "Organizers",
-      description: "Beautifully designed organizers to keep your precious items safe and well-arranged.",
-      link: "#organizers"
+      description: "Beautifully designed organizers to keep your precious items safe and well-arranged."
+
     },
     {
       icon: <Mail className="h-6 w-6" />,

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
-
+import { Facebook, Instagram, Twitter} from 'lucide-react';
+import { SiWhatsapp } from 'react-icons/si';
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
   
@@ -19,15 +19,18 @@ const Footer: React.FC = () => {
               life's most cherished moments.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-burgundy transition-colors">
+              <a href="https://search.app/WGVw2LDou84poxrWA" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-burgundy transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-burgundy transition-colors">
+              <a href="https://www.instagram.com/prezziebazaar" target='_blank' className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-burgundy transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-burgundy transition-colors">
+              <a href="https://x.com/bazaarprez3246?s=21" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-burgundy transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
+              <a href="https://wa.me/919928378286" target="_blank" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                <SiWhatsapp className="h-5 w-5" />
+              </a>  
             </div>
           </div>
           
@@ -35,7 +38,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-serif font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="home" className="text-gray-400 hover:text-white transition-colors">Home</a>
               </li>
               <li>
                 <a href="#products" className="text-gray-400 hover:text-white transition-colors">Products</a>
@@ -79,13 +82,13 @@ const Footer: React.FC = () => {
               <li className="flex">
                 <span className="text-gray-400">Address:</span>
                 <span className="text-white ml-2">
-                  Creative Hub, C-5, Raja Park, Jaipur, Rajasthan, India
+                  A-37 Laxmi Vihar, Nandpuri, Bais Godam, Jaipur, Rajasthan, India
                 </span>
               </li>
               <li className="flex">
                 <span className="text-gray-400">Phone:</span>
-                <a href="tel:+919876543210" className="text-white ml-2 hover:text-gold transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919928378286" className="text-white ml-2 hover:text-gold transition-colors">
+                  +91 99283 78286
                 </a>
               </li>
               <li className="flex">

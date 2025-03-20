@@ -64,6 +64,12 @@ const Testimonials: React.FC = () => {
       author: "Vikram Malhotra",
       position: "Boutique Owner",
       rating: 4
+    },
+    {
+      quote: "Their brand merchandising solutions helped our boutique stand out. The attention to detail and quality of materials used are exceptional.",
+      author: "Vikram Malhotra",
+      position: "Boutique Owner",
+      rating: 5
     }
   ];
   
