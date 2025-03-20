@@ -12,6 +12,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    headers: {
+      "Content-Type": "application/javascript",
+      // Ensure JavaScript files have proper MIME type
+      "*.js": ["Content-Type: application/javascript"],
+      "*.mjs": ["Content-Type: application/javascript"],
+    },
   },
   plugins: [
     react(),
@@ -23,4 +29,14 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Ensure output JS files have correct extensions
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
+  }
 }));
