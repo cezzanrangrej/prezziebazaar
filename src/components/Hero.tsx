@@ -31,15 +31,15 @@ const Hero: React.FC = () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  return <section ref={heroRef} className="relative h-screen flex items-center overflow-hidden bg-cream" style={{
+  return <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-cream" style={{
     backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'52\' height=\'26\' viewBox=\'0 0 52 26\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23a78bfa\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z\' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
   }}>
       <div className="absolute inset-0 bg-gradient-radial from-cream to-cream/80 z-0"></div>
       
-      <div className="container mx-auto px-4 md:px-8 z-10 flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto px-4 md:px-8 z-10 flex flex-col md:flex-row items-center justify-between py-20 md:py-0">
         <div className="hero-content w-full md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
           <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 inline-block px-4 py-2 rounded-full animate-fade-in">
-            <span className="text-xs sm:text-sm font-medium">Handcrafted in Jaipur, Deliver All Over India</span>
+            <span className="text-xs sm:text-sm font-medium">Handcrafted in Jaipur, India</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 animate-fade-in">
             <span className="block text-charcoal">Artisanal Gift Boxes</span>
@@ -60,18 +60,18 @@ const Hero: React.FC = () => {
         </div>
         
         <div className="hero-image w-full md:w-1/2 relative animate-float">
-          <div className="relative w-full aspect-square max-w-md mx-auto">
+          <div className="relative w-full aspect-square max-w-sm mx-auto">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/20 rounded-full filter blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-burgundy/10 rounded-full filter blur-3xl"></div>
             
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-white/50 shadow-2xl border border-white/60 backdrop-blur-sm">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-48 h-48 mx-auto mb-4 rounded-full bg-burgundy/5 flex items-center justify-center">
-                    <img src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" alt="Prezzie Bazaar Logo" className="w-40 h-40 object-fill" />
+                <div className="text-center p-6 md:p-8">
+                  <div className="w-36 h-36 sm:w-48 sm:h-48 mx-auto mb-4 rounded-full bg-burgundy/5 flex items-center justify-center">
+                    <img src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" alt="Prezzie Bazaar Logo" className="w-28 h-28 sm:w-40 sm:h-40 object-fill" />
                   </div>
-                  <h3 className="text-xl font-medium text-charcoal">Elegant Gift Box</h3>
-                  <p className="text-sm text-charcoal/70 mt-2">Handcrafted with love</p>
+                  <h3 className="text-lg sm:text-xl font-medium text-charcoal">Elegant Gift Box</h3>
+                  <p className="text-xs sm:text-sm text-charcoal/70 mt-2">Handcrafted with love</p>
                 </div>
               </div>
             </div>

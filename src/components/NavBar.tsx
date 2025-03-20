@@ -36,15 +36,15 @@ const NavBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3">
               <img 
                 src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
-                className="h-12 md:h-16 transition-all duration-300"
+                className="h-10 sm:h-12 md:h-16 transition-all duration-300"
               />
-              <div className="hidden sm:block">
-                <span className="text-xl font-serif font-bold text-burgundy">Prezzie</span>
-                <span className="text-xl font-serif font-bold text-gold">Bazaar</span>
+              <div className="flex flex-col sm:block">
+                <span className="text-sm sm:text-xl font-serif font-bold text-burgundy">Prezzie</span>
+                <span className="text-sm sm:text-xl font-serif font-bold text-gold">Bazaar</span>
               </div>
             </Link>
           </div>
@@ -92,17 +92,17 @@ const NavBar: React.FC = () => {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <nav className="space-y-8 text-center">
-          <div className="mb-8">
+        <nav className="space-y-6 text-center">
+          <div className="mb-6">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <img 
                 src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
-                className="h-20 mx-auto"
+                className="h-16 sm:h-20 mx-auto"
               />
-              <div className="mt-3">
-                <span className="text-2xl font-serif font-bold text-burgundy">Prezzie</span>
-                <span className="text-2xl font-serif font-bold text-gold">Bazaar</span>
+              <div className="mt-2">
+                <span className="text-xl sm:text-2xl font-serif font-bold text-burgundy">Prezzie</span>
+                <span className="text-xl sm:text-2xl font-serif font-bold text-gold">Bazaar</span>
               </div>
             </Link>
           </div>
@@ -111,7 +111,7 @@ const NavBar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block text-2xl font-medium text-charcoal hover:text-burgundy"
+                className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -120,7 +120,7 @@ const NavBar: React.FC = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="block text-2xl font-medium text-charcoal hover:text-burgundy"
+                className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
