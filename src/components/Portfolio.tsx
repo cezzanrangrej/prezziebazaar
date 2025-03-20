@@ -27,7 +27,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
-              src={imageSrc} 
+              src={imageSrc && imageSrc.startsWith('/') ? `.${imageSrc}` : `./${imageSrc}`} 
               alt={title} 
               className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
             />
@@ -39,7 +39,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
                 {category === 'Accessories' && <Tag className="w-8 h-8 text-burgundy" />}
                 {!['Carry Bags', 'Boxes', 'Accessories'].includes(category) && (
                   <img 
-                    src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                    src="./lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                     alt="Prezzie Bazaar Logo" 
                     className="w-10 h-10 object-contain"
                   />
