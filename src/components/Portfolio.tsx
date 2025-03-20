@@ -7,7 +7,7 @@ interface PortfolioItemProps {
   category: string;
   title: string;
   description: string;
-  imageSrc?: string;
+  imageSrc: string;
   link: string;
   externalLink?: string;
 }
