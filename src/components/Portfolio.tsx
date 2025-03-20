@@ -24,18 +24,26 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
       <a href={link} onClick={handleClick} target="_blank" rel="noopener noreferrer">
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
-          <div className="w-full h-full flex items-center justify-center bg-gray-100">
-            <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-              {category === 'Carry Bags' && <ShoppingBag className="w-8 h-8 text-burgundy" />}
-              {category === 'Boxes' && <Gift className="w-8 h-8 text-burgundy" />}
-              {category === 'Accessories' && <Tag className="w-8 h-8 text-burgundy" />}
-              {!['Carry Bags', 'Boxes', 'Accessories'].includes(category) && (
-                <div className="w-10 h-10 flex items-center justify-center bg-burgundy/10 rounded-full">
-                  <span className="text-burgundy font-bold text-lg">P</span>
-                </div>
-              )}
+          {imageSrc ? (
+            <img 
+              src={imageSrc} 
+              alt={title}
+              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+                {category === 'Carry Bags' && <ShoppingBag className="w-8 h-8 text-burgundy" />}
+                {category === 'Boxes' && <Gift className="w-8 h-8 text-burgundy" />}
+                {category === 'Accessories' && <Tag className="w-8 h-8 text-burgundy" />}
+                {!['Carry Bags', 'Boxes', 'Accessories'].includes(category) && (
+                  <div className="w-10 h-10 flex items-center justify-center bg-burgundy/10 rounded-full">
+                    <span className="text-burgundy font-bold text-lg">P</span>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          )}
           
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -113,6 +121,7 @@ const Portfolio: React.FC = () => {
       title: 'Pamphlets,Tags & Stickers',
       description: 'Get your customised pamplets, tags & stickers for every purpose.',
       type: 'custom',
+      imageSrc: '/1.jpg',
       link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
     },
     {
@@ -121,6 +130,7 @@ const Portfolio: React.FC = () => {
       title: 'Royal Wedding Invitation',
       description: 'Custom designed invitations for a royal-themed wedding.',
       type: 'wedding',
+      imageSrc: '/WhatsApp Image 2025-03-15 at 00.08.01_4214b9f2.jpg',
       link: "https://drive.google.com/drive/folders/1KufJhzqWHo7DMl_cfUqeXqJZnkSfJDFv?usp=drive_link",
     },
     {
@@ -129,6 +139,7 @@ const Portfolio: React.FC = () => {
       title: 'Corporate Gift Package',
       description: 'Bespoke branded gifts for corporate clients.',
       type: 'gifts',
+      imageSrc: '/WhatsApp Image 2025-03-15 at 00.10.28_11cc942f.jpg',
       link: "https://drive.google.com/drive/folders/1BOvD3DMQPgkmxknFFokse6U-BanWW9qh?usp=drive_link"
     },
     {
@@ -137,6 +148,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Hampers',
       description: 'A specially crafted birthday gift box with compartments.',
       type: 'gifts',
+      imageSrc: '/WhatsApp Image 2025-03-13 at 23.07.26_281ad9b2.jpg',
       link: "https://drive.google.com/drive/folders/1UToBW9PweebmEYqfmgU1xid27GIXK0VD"
     },
     {
@@ -145,6 +157,7 @@ const Portfolio: React.FC = () => {
       title: 'Menu Cards',
       description: 'Elegant menu cards for your cafes & restaurent.',
       type: 'custom',
+      imageSrc: '/WhatsApp Image 2025-03-15 at 00.04.29_18d3aa57.jpg',
       link: "https://drive.google.com/drive/folders/1LFrC-iwk4l0VHADtN8jUgzgBZHVRIzn4?usp=drive_link"
     },
     {
@@ -153,6 +166,7 @@ const Portfolio: React.FC = () => {
       title: 'Personal Diaries & Planers',
       description: 'Custom memory box for preserving special moments.',
       type: 'custom',
+      imageSrc: '/WhatsApp Image 2025-03-15 at 00.17.43_f88e5491.jpg',
       link: "https://drive.google.com/drive/folders/12h1rKBKIEaeLvg6-Z_lu0abx6VX5TO4t?usp=drive_link"
     },
     {
@@ -161,6 +175,7 @@ const Portfolio: React.FC = () => {
       title: 'Rigid Box',
       description: 'Premium paper gift bags with custom printing and handles.',
       type: 'boxes',
+      imageSrc: '/WhatsApp Image 2025-03-15 at 00.35.52_2dd6ac79.jpg',
       link: "https://drive.google.com/drive/folders/177mp-Fz6XdnmO5jGdLxOiYNej883Dv7J"
     },
     {
@@ -169,6 +184,7 @@ const Portfolio: React.FC = () => {
       title: 'Paper Bags',
       description: 'High-end branded shopping bags for retail boutiques.',
       type: 'carry-bags',
+      imageSrc: '/1.jpg',
       link: "https://drive.google.com/drive/folders/1AkCrAeAqfisAnZd9EP8kZAsz_kCO8qe0"
     },
     {
@@ -177,6 +193,7 @@ const Portfolio: React.FC = () => {
       title: 'Jewellery Boxes',
       description: 'Elegant box designed specifically for engagement rings.',
       type: 'boxes',
+      imageSrc: '/1.jpg',
       link: "https://drive.google.com/drive/folders/1km61MaFm5ZcUlh-MTiawMMNOsh6KqHN3"
     },
     {
@@ -185,6 +202,7 @@ const Portfolio: React.FC = () => {
       title: 'Accessories',
       description: 'Handcrafted wooden box for your accessories.',
       type: 'accessories',
+      imageSrc: '/1.jpg',
       link: "https://drive.google.com/drive/folders/1IG6OvJNtB3QfVNM_wrmexCen7Vfisndu?usp=drive_link"
     },
     {
@@ -193,6 +211,7 @@ const Portfolio: React.FC = () => {
       title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
       type: 'custom',
+      imageSrc: '/1.jpg',
       link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
     },
     {
@@ -201,6 +220,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Envelopes',
       description: 'High-quality satin and grosgrain ribbons in various widths.',
       type: 'gifts',
+      imageSrc: '/1.jpg',
       link: "https://drive.google.com/drive/folders/1bsKobcyEl1O4O8zCgxucUJOHVqeDmoGc?usp=drive_link"
     }
   ];
@@ -249,6 +269,7 @@ const Portfolio: React.FC = () => {
               category={item.category}
               title={item.title}
               description={item.description}
+              imageSrc={item.imageSrc}
               link={item.link}
             />
           ))}
