@@ -13,10 +13,15 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     headers: {
+      // Set default content type for all JavaScript files
       "Content-Type": "application/javascript",
       // Ensure JavaScript files have proper MIME type
       "*.js": ["Content-Type: application/javascript"],
       "*.mjs": ["Content-Type: application/javascript"],
+      "*.cjs": ["Content-Type: application/javascript"],
+      "*.jsx": ["Content-Type: application/javascript"],
+      "*.ts": ["Content-Type: application/javascript"],
+      "*.tsx": ["Content-Type: application/javascript"],
     },
   },
   plugins: [
@@ -30,7 +35,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Ensure output JS files have correct extensions
+    // Ensure output JS files have correct extensions and MIME types
     rollupOptions: {
       output: {
         entryFileNames: 'assets/[name]-[hash].js',

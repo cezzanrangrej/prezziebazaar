@@ -3,16 +3,17 @@
 <IfModule mod_mime.c>
   AddType application/javascript .js
   AddType application/javascript .mjs
+  AddType application/javascript .cjs
+  AddType application/javascript .jsx
+  AddType application/javascript .ts
+  AddType application/javascript .tsx
   AddType text/javascript .js
   AddType text/javascript .mjs
 </IfModule>
 
 # Set proper headers for JavaScript files
 <IfModule mod_headers.c>
-  <FilesMatch "\.js$">
-    Header set Content-Type "application/javascript"
-  </FilesMatch>
-  <FilesMatch "\.mjs$">
+  <FilesMatch "\.(js|mjs|cjs|jsx|ts|tsx)$">
     Header set Content-Type "application/javascript"
   </FilesMatch>
 </IfModule>
