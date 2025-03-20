@@ -12,6 +12,9 @@ export default defineConfig(({ mode }) => ({
     fs: {
       strict: false,
       allow: ['..']
+    },
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()'
     }
   },
   plugins: [
