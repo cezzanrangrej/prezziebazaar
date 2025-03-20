@@ -10,13 +10,25 @@ interface PortfolioItemProps {
   description: string;
   imageSrc?: string;
   link: string;
+  externalLink?: string;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link }) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, description, imageSrc, link, externalLink }) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (externalLink) {
+      e.preventDefault();
+      window.open(externalLink, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
+<<<<<<< HEAD
       <a href={link} target="_blank" rel="noopener noreferrer">
 
+=======
+      <a href={link} onClick={handleClick}>
+>>>>>>> 82a51a57b93f73dded2c54014efaab8ef9e6a1da
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
@@ -44,7 +56,9 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
             <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <h3 className="text-xl font-serif font-semibold">{title}</h3>
               <p className="text-sm mt-2">{description}</p>
-              <span className="inline-block mt-3 px-4 py-2 border border-white/50 rounded-full text-sm">View Project</span>
+              <span className="inline-block mt-3 px-4 py-2 border border-white/50 rounded-full text-sm">
+                {externalLink ? 'Visit Instagram' : 'View Project'}
+              </span>
             </div>
           </div>
         </div>
@@ -65,7 +79,6 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     initAnimations();
     
-    // Custom scroll animation for portfolio items
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -111,12 +124,22 @@ const Portfolio: React.FC = () => {
   const portfolioItems = [
     {
       id: 1,
+<<<<<<< HEAD
       category: 'Custom',
       title: 'Pamphlets,Tags & Stickers',
       description: 'Get your customised pamplets, tags & stickers for every purpose.',
       type: 'custom',
       imageSrc: '1.jpg',
       link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
+=======
+      category: 'Gift Boxes',
+      title: 'Luxury Anniversary Box',
+      description: 'A handcrafted box for a 25th wedding anniversary gift.',
+      type: 'gift-boxes',
+      imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png',
+      link: '#project-luxury-anniversary-box',
+      externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x'
+>>>>>>> 82a51a57b93f73dded2c54014efaab8ef9e6a1da
     },
     {
       id: 2,
@@ -205,9 +228,15 @@ const Portfolio: React.FC = () => {
       category: 'Custom',
       title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
+<<<<<<< HEAD
       type: 'custom',
       imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.07_c1a51fea.jpg',
       link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
+=======
+      type: 'accessories',
+      link: '#project-custom-gift-tags',
+      externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x'
+>>>>>>> 82a51a57b93f73dded2c54014efaab8ef9e6a1da
     },
     {
       id: 12,
@@ -266,6 +295,7 @@ const Portfolio: React.FC = () => {
               description={item.description}
               imageSrc={item.imageSrc}
               link={item.link}
+              externalLink={item.externalLink}
             />
           ))}
         </div>
