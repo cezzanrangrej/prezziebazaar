@@ -23,12 +23,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
 
   return (
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
-<<<<<<< HEAD
-      <a href={link} target="_blank" rel="noopener noreferrer">
-
-=======
-      <a href={link} onClick={handleClick}>
->>>>>>> 82a51a57b93f73dded2c54014efaab8ef9e6a1da
+      <a href={link} onClick={handleClick} target="_blank" rel="noopener noreferrer">
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
@@ -124,14 +119,6 @@ const Portfolio: React.FC = () => {
   const portfolioItems = [
     {
       id: 1,
-<<<<<<< HEAD
-      category: 'Custom',
-      title: 'Pamphlets,Tags & Stickers',
-      description: 'Get your customised pamplets, tags & stickers for every purpose.',
-      type: 'custom',
-      imageSrc: '1.jpg',
-      link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
-=======
       category: 'Gift Boxes',
       title: 'Luxury Anniversary Box',
       description: 'A handcrafted box for a 25th wedding anniversary gift.',
@@ -139,7 +126,6 @@ const Portfolio: React.FC = () => {
       imageSrc: '/lovable-uploads/66b9abea-9cd4-4c30-b0dc-9fb30b5a7ac6.png',
       link: '#project-luxury-anniversary-box',
       externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x'
->>>>>>> 82a51a57b93f73dded2c54014efaab8ef9e6a1da
     },
     {
       id: 2,
@@ -228,15 +214,10 @@ const Portfolio: React.FC = () => {
       category: 'Custom',
       title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
-<<<<<<< HEAD
-      type: 'custom',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.07_c1a51fea.jpg',
-      link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
-=======
       type: 'accessories',
       link: '#project-custom-gift-tags',
-      externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x'
->>>>>>> 82a51a57b93f73dded2c54014efaab8ef9e6a1da
+      externalLink: 'https://www.instagram.com/prezziebazaar?igsh=MnRkNXhuNnRnMW5x',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.07_c1a51fea.jpg'
     },
     {
       id: 12,
