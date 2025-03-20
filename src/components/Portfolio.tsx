@@ -184,7 +184,7 @@ const Portfolio: React.FC = () => {
       title: 'Paper Bags',
       description: 'High-end branded shopping bags for retail boutiques.',
       type: 'carry-bags',
-      imageSrc: '1.jpg',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 17.02.30_4002bc08.jpg',
       link: "https://drive.google.com/drive/folders/1AkCrAeAqfisAnZd9EP8kZAsz_kCO8qe0"
     },
     {
@@ -193,7 +193,7 @@ const Portfolio: React.FC = () => {
       title: 'Jewellery Boxes',
       description: 'Elegant box designed specifically for engagement rings.',
       type: 'boxes',
-      imageSrc: '1.jpg',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 05.03.28_78449e28.jpg',
       link: "https://drive.google.com/drive/folders/1km61MaFm5ZcUlh-MTiawMMNOsh6KqHN3"
     },
     {
@@ -202,7 +202,7 @@ const Portfolio: React.FC = () => {
       title: 'Accessories',
       description: 'Handcrafted wooden box for your accessories.',
       type: 'accessories',
-      imageSrc: '1.jpg',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 16.56.13_d4a7983c.jpg',
       link: "https://drive.google.com/drive/folders/1IG6OvJNtB3QfVNM_wrmexCen7Vfisndu?usp=drive_link"
     },
     {
@@ -211,7 +211,7 @@ const Portfolio: React.FC = () => {
       title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
       type: 'custom',
-      imageSrc: '1.jpg',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.07_c1a51fea.jpg',
       link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
     },
     {
@@ -220,7 +220,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Envelopes',
       description: 'High-quality satin and grosgrain ribbons in various widths.',
       type: 'gifts',
-      imageSrc: '1.jpg',
+      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.08_04c57302.jpg',
       link: "https://drive.google.com/drive/folders/1bsKobcyEl1O4O8zCgxucUJOHVqeDmoGc?usp=drive_link"
     }
   ];
