@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -39,7 +38,7 @@ const NavBar: React.FC = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center gap-3">
               <img 
-                src="./lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
                 className="h-12 md:h-16 transition-all duration-300"
               />
@@ -97,7 +96,7 @@ const NavBar: React.FC = () => {
           <div className="mb-8">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <img 
-                src="./lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
                 className="h-20 mx-auto"
               />

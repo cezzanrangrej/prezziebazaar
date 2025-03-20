@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-48 h-48 mx-auto mb-4 rounded-full bg-burgundy/5 flex items-center justify-center">
-                    <img src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" alt="Prezzie Bazaar Logo" className="w-40 h-40 object-fill" />
+                    <img src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" alt="Prezzie Bazaar Logo" className="w-40 h-40 object-fill" />
                   </div>
                   <h3 className="text-xl font-medium text-charcoal">Elegant Gift Box</h3>
                   <p className="text-sm text-charcoal/70 mt-2">Handcrafted with love</p>

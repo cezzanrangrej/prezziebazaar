@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { initAnimations } from '@/utils/animations';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
@@ -23,15 +22,11 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
 
   return (
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
-      <a href={link} target="_blank" rel="noopener noreferrer"> </a>
-
-=======
       <a href={link} onClick={handleClick}>
-
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
-              src={imageSrc && imageSrc.startsWith('/') ? `.${imageSrc}` : `./${imageSrc}`} 
+              src={`/prezzie-porch/${imageSrc}`}
               alt={title} 
               className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
             />
@@ -43,7 +38,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
                 {category === 'Accessories' && <Tag className="w-8 h-8 text-burgundy" />}
                 {!['Carry Bags', 'Boxes', 'Accessories'].includes(category) && (
                   <img 
-                    src="./lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                    src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                     alt="Prezzie Bazaar Logo" 
                     className="w-10 h-10 object-contain"
                   />
@@ -51,7 +46,8 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
               </div>
             </div>
           )}
-          <div className="absolute inset-0 bg-burgundy/70 opacity-0 group-hover:opacity-90 flex items-center justify-center transition-all duration-300">
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <h3 className="text-xl font-serif font-semibold">{title}</h3>
               <p className="text-sm mt-2">{description}</p>
