@@ -16,8 +16,13 @@ const NavBar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: null, onClick: scrollToTop },
     { name: 'Products', href: '#products' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Testimonials', href: '#testimonials' },
@@ -36,7 +41,7 @@ const NavBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center gap-2 sm:gap-3">
+            <a onClick={scrollToTop} href="#" className="flex items-center gap-2 sm:gap-3 cursor-pointer">
               <img 
                 src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
@@ -52,7 +57,15 @@ const NavBar: React.FC = () => {
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              link.href.startsWith('#') ? (
+              link.onClick ? (
+                <a
+                  key={link.name}
+                  onClick={link.onClick}
+                  className="text-charcoal hover:text-burgundy font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-burgundy after:transition-all hover:after:w-full cursor-pointer"
+                >
+                  {link.name}
+                </a>
+              ) : link.href?.startsWith('#') ? (
                 <a
                   key={link.name}
                   href={link.href}
@@ -63,7 +76,7 @@ const NavBar: React.FC = () => {
               ) : (
                 <Link
                   key={link.name}
-                  to={link.href}
+                  to={link.href || ''}
                   className="text-charcoal hover:text-burgundy font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-burgundy after:transition-all hover:after:w-full"
                 >
                   {link.name}
@@ -94,7 +107,7 @@ const NavBar: React.FC = () => {
       >
         <nav className="space-y-6 text-center">
           <div className="mb-6">
-            <a href="#" onClick={() => setIsMobileMenuOpen(false)}>
+            <a onClick={scrollToTop} className="cursor-pointer">
               <img 
                 src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
@@ -107,7 +120,15 @@ const NavBar: React.FC = () => {
             </a>
           </div>
           {navLinks.map((link) => (
-            link.href.startsWith('#') ? (
+            link.onClick ? (
+              <a
+                key={link.name}
+                onClick={link.onClick}
+                className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy cursor-pointer"
+              >
+                {link.name}
+              </a>
+            ) : link.href?.startsWith('#') ? (
               <a
                 key={link.name}
                 href={link.href}
@@ -119,7 +140,7 @@ const NavBar: React.FC = () => {
             ) : (
               <Link
                 key={link.name}
-                to={link.href}
+                to={link.href || ''}
                 className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
