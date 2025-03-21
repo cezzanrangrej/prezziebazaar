@@ -9,12 +9,24 @@
   AddType application/javascript .tsx
   AddType text/javascript .js
   AddType text/javascript .mjs
+  
+  # Image types
+  AddType image/jpeg .jpg .jpeg
+  AddType image/png .png
+  AddType image/gif .gif
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType image/x-icon .ico
 </IfModule>
 
 # Set proper headers for JavaScript files
 <IfModule mod_headers.c>
   <FilesMatch "\.(js|mjs|cjs|jsx|ts|tsx)$">
     Header set Content-Type "application/javascript"
+  </FilesMatch>
+  
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
+    Header set Cache-Control "max-age=31536000, public"
   </FilesMatch>
 </IfModule>
 

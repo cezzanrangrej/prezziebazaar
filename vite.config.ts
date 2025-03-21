@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -7,6 +8,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   base: mode === 'development' ? '/' : '/prezzie-porch/',
   server: {
+    port: 8080,
     strictPort: false,
     open: true,
     fs: {
@@ -14,7 +16,8 @@ export default defineConfig(({ mode }) => ({
       allow: ['..']
     },
     headers: {
-      'Permissions-Policy': 'interest-cohort=()'
+      'Permissions-Policy': 'interest-cohort=()',
+      'Content-Type': 'application/javascript'
     }
   },
   plugins: [
