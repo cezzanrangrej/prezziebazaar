@@ -32,9 +32,9 @@ const NavBar: React.FC = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full',
         isScrolled 
-          ? 'py-2 bg-white/90 backdrop-blur-md shadow-sm' 
+          ? 'py-1 bg-white shadow-md' 
           : 'py-2 bg-white md:py-4 md:bg-transparent'
       )}
     >
@@ -45,11 +45,20 @@ const NavBar: React.FC = () => {
               <img 
                 src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
-                className="h-10 sm:h-12 md:h-16 transition-all duration-300"
+                className={cn(
+                  "transition-all duration-300",
+                  isScrolled ? "h-8 sm:h-10 md:h-12" : "h-10 sm:h-12 md:h-16"
+                )}
               />
               <div className="flex flex-col sm:block">
-                <span className="text-sm sm:text-xl font-serif font-bold text-burgundy">Prezzie</span>
-                <span className="text-sm sm:text-xl font-serif font-bold text-gold">Bazaar</span>
+                <span className={cn(
+                  "font-serif font-bold text-burgundy transition-all duration-300",
+                  isScrolled ? "text-xs sm:text-sm md:text-lg" : "text-sm sm:text-xl"
+                )}>Prezzie</span>
+                <span className={cn(
+                  "font-serif font-bold text-gold transition-all duration-300",
+                  isScrolled ? "text-xs sm:text-sm md:text-lg" : "text-sm sm:text-xl"
+                )}>Bazaar</span>
               </div>
             </a>
           </div>
