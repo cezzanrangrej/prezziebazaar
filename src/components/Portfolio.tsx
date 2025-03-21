@@ -155,7 +155,7 @@ const Portfolio: React.FC = () => {
       title: 'Pamphlets,Tags & Stickers',
       description: 'Get your customised pamplets, tags & stickers for every purpose.',
       type: 'custom',
-      imageSrc: '1.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
     },
     {
@@ -164,7 +164,7 @@ const Portfolio: React.FC = () => {
       title: 'Royal Wedding Invitation',
       description: 'Custom designed invitations for a royal-themed wedding.',
       type: 'wedding',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.08.01_4214b9f2.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1KufJhzqWHo7DMl_cfUqeXqJZnkSfJDFv?usp=drive_link",
     },
     {
@@ -173,7 +173,7 @@ const Portfolio: React.FC = () => {
       title: 'Corporate Gift Package',
       description: 'Bespoke branded gifts for corporate clients.',
       type: 'gifts',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.10.28_11cc942f.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1BOvD3DMQPgkmxknFFokse6U-BanWW9qh?usp=drive_link"
     },
     {
@@ -182,7 +182,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Hampers',
       description: 'A specially crafted birthday gift box with compartments.',
       type: 'gifts',
-      imageSrc: 'WhatsApp Image 2025-03-13 at 23.07.26_281ad9b2.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1UToBW9PweebmEYqfmgU1xid27GIXK0VD"
     },
     {
@@ -191,7 +191,7 @@ const Portfolio: React.FC = () => {
       title: 'Menu Cards',
       description: 'Elegant menu cards for your cafes & restaurent.',
       type: 'custom',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.04.29_18d3aa57.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1LFrC-iwk4l0VHADtN8jUgzgBZHVRIzn4?usp=drive_link"
     },
     {
@@ -200,7 +200,7 @@ const Portfolio: React.FC = () => {
       title: 'Personal Diaries & Planers',
       description: 'Custom memory box for preserving special moments.',
       type: 'custom',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.17.43_f88e5491.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/12h1rKBKIEaeLvg6-Z_lu0abx6VX5TO4t?usp=drive_link"
     },
     {
@@ -209,7 +209,7 @@ const Portfolio: React.FC = () => {
       title: 'Rigid Box',
       description: 'Premium paper gift bags with custom printing and handles.',
       type: 'boxes',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.35.52_2dd6ac79.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/177mp-Fz6XdnmO5jGdLxOiYNej883Dv7J"
     },
     {
@@ -218,7 +218,7 @@ const Portfolio: React.FC = () => {
       title: 'Paper Bags',
       description: 'High-end branded shopping bags for retail boutiques.',
       type: 'carry-bags',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 17.02.30_4002bc08.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1572584642822-6f8de0243c93?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1AkCrAeAqfisAnZd9EP8kZAsz_kCO8qe0"
     },
     {
@@ -227,7 +227,7 @@ const Portfolio: React.FC = () => {
       title: 'Jewellery Boxes',
       description: 'Elegant box designed specifically for engagement rings.',
       type: 'boxes',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 05.03.28_78449e28.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1583053644792-03a882b6f985?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1km61MaFm5ZcUlh-MTiawMMNOsh6KqHN3"
     },
     {
@@ -236,7 +236,7 @@ const Portfolio: React.FC = () => {
       title: 'Accessories',
       description: 'Handcrafted wooden box for your accessories.',
       type: 'accessories',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 16.56.13_d4a7983c.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1613843452161-1517f6342b12?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1IG6OvJNtB3QfVNM_wrmexCen7Vfisndu?usp=drive_link"
     },
     {
@@ -245,7 +245,7 @@ const Portfolio: React.FC = () => {
       title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
       type: 'custom',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.07_c1a51fea.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
     },
     {
@@ -254,7 +254,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Envelopes',
       description: 'High-quality satin and grosgrain ribbons in various widths.',
       type: 'gifts',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.08_04c57302.jpg',
+      imageSrc: 'https://images.unsplash.com/photo-1609601864511-abde766a0988?w=600&h=400&fit=crop',
       link: "https://drive.google.com/drive/folders/1bsKobcyEl1O4O8zCgxucUJOHVqeDmoGc?usp=drive_link"
     }
   ];
