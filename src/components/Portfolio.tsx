@@ -155,7 +155,7 @@ const Portfolio: React.FC = () => {
       title: 'Pamphlets,Tags & Stickers',
       description: 'Get your customised pamplets, tags & stickers for every purpose.',
       type: 'custom',
-      imageSrc: '/assets/portfolio/1.jpg',
+      imageSrc: 'public\1.jpg',
       link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
     },
     {
@@ -227,7 +227,7 @@ const Portfolio: React.FC = () => {
       title: 'Jewellery Boxes',
       description: 'Elegant box designed specifically for engagement rings.',
       type: 'boxes',
-      imageSrc: '/assets/portfolio/jewellery-box.jpg',
+      imageSrc: 'public\WhatsApp Image 2025-03-15 at 19.59.08_04c57302.jpg',
       link: "https://drive.google.com/drive/folders/1km61MaFm5ZcUlh-MTiawMMNOsh6KqHN3"
     },
     {
