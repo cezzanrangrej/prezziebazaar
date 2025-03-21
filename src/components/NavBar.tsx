@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled 
           ? 'py-2 bg-white/90 backdrop-blur-md shadow-sm' 
-          : 'py-4 bg-transparent'
+          : 'py-2 bg-white md:py-4 md:bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,6 +90,7 @@ const NavBar: React.FC = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-charcoal hover:text-burgundy focus:outline-none"
+              aria-expanded={isMobileMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -101,55 +102,52 @@ const NavBar: React.FC = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          'fixed inset-0 flex flex-col items-center justify-center bg-cream bg-opacity-98 transform transition-transform duration-300 ease-in-out md:hidden',
+          'fixed inset-0 pt-20 flex flex-col bg-white z-40 transform transition-transform duration-300 ease-in-out md:hidden',
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <nav className="space-y-6 text-center">
-          <div className="mb-6">
-            <a onClick={scrollToTop} className="cursor-pointer">
-              <img 
-                src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
-                alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
-                className="h-16 sm:h-20 mx-auto"
-              />
-              <div className="mt-2">
-                <span className="text-xl sm:text-2xl font-serif font-bold text-burgundy">Prezzie</span>
-                <span className="text-xl sm:text-2xl font-serif font-bold text-gold">Bazaar</span>
-              </div>
-            </a>
-          </div>
-          {navLinks.map((link) => (
-            link.onClick ? (
-              <a
-                key={link.name}
-                onClick={link.onClick}
-                className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy cursor-pointer"
-              >
-                {link.name}
-              </a>
-            ) : link.href?.startsWith('#') ? (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.href || ''}
-                className="block text-xl sm:text-2xl font-medium text-charcoal hover:text-burgundy"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            )
-          ))}
-        </nav>
+        <div className="flex-1 overflow-y-auto px-4 py-6">
+          <nav className="space-y-6 text-center mt-6">
+            {navLinks.map((link) => (
+              link.onClick ? (
+                <a
+                  key={link.name}
+                  onClick={link.onClick}
+                  className="block text-xl font-medium text-charcoal hover:text-burgundy cursor-pointer py-2"
+                >
+                  {link.name}
+                </a>
+              ) : link.href?.startsWith('#') ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block text-xl font-medium text-charcoal hover:text-burgundy py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href || ''}
+                  className="block text-xl font-medium text-charcoal hover:text-burgundy py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
+            ))}
+          </nav>
+        </div>
       </div>
+      
+      {/* Overlay to close the menu when clicked outside */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-25 z-30 md:hidden" 
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </header>
   );
 };

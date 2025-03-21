@@ -20,13 +20,18 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
     }
   };
 
+  // Ensure image path starts with the correct prefix
+  const imageUrl = imageSrc.startsWith('/') || imageSrc.startsWith('http') 
+    ? imageSrc 
+    : `/prezzie-porch/lovable-uploads/${imageSrc}`;
+
   return (
     <div className="portfolio-item opacity-0 transform translate-y-8 transition-all duration-700 group cursor-pointer">
       <a href={link} onClick={handleClick} target="_blank" rel="noopener noreferrer">
         <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-burgundy/5 mb-4 transition-all duration-300 group-hover:shadow-xl">
           {imageSrc ? (
             <img 
-              src={imageSrc} 
+              src={imageUrl} 
               alt={title}
               className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
             />
