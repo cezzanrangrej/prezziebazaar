@@ -250,7 +250,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Envelopes',
       description: 'High-quality satin and grosgrain ribbons in various widths.',
       type: 'gifts',
-      imageSrc: '/assets/portfolio/gift-envelopes.jpg',
+      imageSrc: '/public/12.jpg',
       link: "https://drive.google.com/drive/folders/1bsKobcyEl1O4O8zCgxucUJOHVqeDmoGc?usp=drive_link"
     }
   ];
