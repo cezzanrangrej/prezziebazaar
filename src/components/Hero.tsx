@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8 z-10 flex flex-col md:flex-row items-center justify-between py-20 md:py-0">
         <div className="hero-content w-full md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
           <div className="animated-badge bg-burgundy/10 text-burgundy mb-4 inline-block px-4 py-2 rounded-full animate-fade-in">
-            <span className="text-xs sm:text-sm font-medium">Handcrafted in Jaipur, India</span>
+            <span className="text-xs sm:text-sm font-medium">Handcrafted in Jaipur, Delivered Pan-India</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 animate-fade-in">
             <span className="block text-charcoal">Artisanal Gift Boxes</span>
