@@ -135,7 +135,7 @@ const Portfolio: React.FC = () => {
       title: 'Pamphlets,Tags & Stickers',
       description: 'Get your customised pamplets, tags & stickers for every purpose.',
       type: 'custom',
-      imageSrc: 'https://placehold.co/600x400/e11d48/ffffff?text=Tags+%26+Stickers',
+      imageSrc: 'C:\\code\\prezzie-porch\\public\\1.jpg',
       link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
     },
     {
