@@ -40,11 +40,11 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
     
     // Make sure the path is correct for GitHub Pages deployment
     if (imageSrc.startsWith('/')) {
-      return imageSrc.startsWith('/prezzie-porch') ? imageSrc : `/prezzie-porch${imageSrc}`;
+      return imageSrc.startsWith('/prezziebazaar') ? imageSrc : `/prezziebazaar${imageSrc}`;
     }
     
     // For images in public folder with relative paths
-    return `/prezzie-porch/${imageSrc}`;
+    return `/prezziebazaar/${imageSrc}`;
   };
 
   // Fallback to placeholder if image fails to load
