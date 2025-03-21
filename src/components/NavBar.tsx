@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      // Detect which section is currently in view
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPosition = window.scrollY + 100; // Offset to trigger slightly before reaching section
+      
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        const sectionHeight = (section as HTMLElement).offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setCurrentSection(section.id);
+        }
+      });
+      
+      if (window.scrollY < 100) {
+        setCurrentSection('');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -19,6 +36,7 @@ const NavBar: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsMobileMenuOpen(false);
+    setCurrentSection('');
   };
 
   const navLinks = [
@@ -29,6 +47,11 @@ const NavBar: React.FC = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const getSectionTitle = (sectionId: string) => {
+    const link = navLinks.find(link => link.href === `#${sectionId}`);
+    return link ? link.name : '';
+  };
+
   return (
     <header
       className={cn(
@@ -38,6 +61,16 @@ const NavBar: React.FC = () => {
           : 'py-2 bg-white md:py-4 md:bg-transparent'
       )}
     >
+      {currentSection && isScrolled && (
+        <button 
+          onClick={scrollToTop}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md z-50"
+          aria-label="Back to home"
+        >
+          <ChevronLeft className="h-5 w-5 text-burgundy" />
+        </button>
+      )}
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
@@ -63,6 +96,13 @@ const NavBar: React.FC = () => {
             </a>
           </div>
           
+          {/* Current section indicator (mobile) */}
+          {currentSection && isScrolled && (
+            <div className="md:hidden mx-auto absolute left-1/2 transform -translate-x-1/2">
+              <span className="text-sm font-medium text-burgundy">{getSectionTitle(currentSection)}</span>
+            </div>
+          )}
+          
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
@@ -78,7 +118,12 @@ const NavBar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-charcoal hover:text-burgundy font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-burgundy after:transition-all hover:after:w-full"
+                  className={cn(
+                    "text-charcoal hover:text-burgundy font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:transition-all",
+                    currentSection === link.href.substring(1) 
+                      ? "text-burgundy after:w-full after:bg-burgundy" 
+                      : "after:w-0 after:bg-burgundy hover:after:w-full"
+                  )}
                 >
                   {link.name}
                 </a>
@@ -130,7 +175,10 @@ const NavBar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-xl font-medium text-charcoal hover:text-burgundy py-2"
+                  className={cn(
+                    "block text-xl font-medium hover:text-burgundy py-2",
+                    currentSection === link.href.substring(1) ? "text-burgundy" : "text-charcoal"
+                  )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
