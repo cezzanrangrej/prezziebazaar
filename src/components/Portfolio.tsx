@@ -33,18 +33,13 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ category, title, descript
       return imageSrc;
     }
     
-    // For absolute paths starting with /assets
-    if (imageSrc.startsWith('/assets')) {
+    // For absolute paths starting with /
+    if (imageSrc.startsWith('/')) {
       return imageSrc;
     }
     
-    // Make sure the path is correct for GitHub Pages deployment
-    if (imageSrc.startsWith('/')) {
-      return imageSrc.startsWith('/prezziebazaar') ? imageSrc : `/prezziebazaar${imageSrc}`;
-    }
-    
     // For images in public folder with relative paths
-    return `/prezziebazaar/${imageSrc}`;
+    return `/${imageSrc}`;
   };
 
   // Fallback to placeholder if image fails to load
