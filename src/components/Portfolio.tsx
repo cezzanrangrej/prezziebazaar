@@ -151,7 +151,7 @@ const Portfolio: React.FC = () => {
       title: 'Pamphlets,Tags & Stickers',
       description: 'Get your customised pamplets, tags & stickers for every purpose.',
       type: 'custom',
-      imageSrc: 'public/1.jpg',
+      imageSrc: '1.jpg',
       link: "https://drive.google.com/drive/folders/1zfncQHpmSfbypZ6DHjyNoGBdZLr_hMwh"
     },
     {
@@ -160,7 +160,7 @@ const Portfolio: React.FC = () => {
       title: 'Royal Wedding Invitation',
       description: 'Custom designed invitations for a royal-themed wedding.',
       type: 'wedding',
-      imageSrc: 'assets/portfolio/wedding-invitation.jpg',
+      imageSrc: '2.jpg',
       link: "https://drive.google.com/drive/folders/1KufJhzqWHo7DMl_cfUqeXqJZnkSfJDFv?usp=drive_link",
     },
     {
@@ -169,7 +169,7 @@ const Portfolio: React.FC = () => {
       title: 'Corporate Gift Package',
       description: 'Bespoke branded gifts for corporate clients.',
       type: 'gifts',
-      imageSrc: 'assets/portfolio/corporate-gift.jpg',
+      imageSrc: '3.jpg',
       link: "https://drive.google.com/drive/folders/1BOvD3DMQPgkmxknFFokse6U-BanWW9qh?usp=drive_link"
     },
     {
@@ -178,7 +178,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Hampers',
       description: 'A specially crafted birthday gift box with compartments.',
       type: 'gifts',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.08_04c57302.jpg',
+      imageSrc: '4.jpg',
       link: "https://drive.google.com/drive/folders/1UToBW9PweebmEYqfmgU1xid27GIXK0VD"
     },
     {
@@ -187,7 +187,7 @@ const Portfolio: React.FC = () => {
       title: 'Menu Cards',
       description: 'Elegant menu cards for your cafes & restaurent.',
       type: 'custom',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.04.29_18d3aa57.jpg',
+      imageSrc: '5.jpg',
       link: "https://drive.google.com/drive/folders/1LFrC-iwk4l0VHADtN8jUgzgBZHVRIzn4?usp=drive_link"
     },
     {
@@ -196,7 +196,7 @@ const Portfolio: React.FC = () => {
       title: 'Personal Diaries & Planers',
       description: 'Custom memory box for preserving special moments.',
       type: 'custom',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 00.08.01_4214b9f2.jpg',
+      imageSrc: '6.jpg',
       link: "https://drive.google.com/drive/folders/12h1rKBKIEaeLvg6-Z_lu0abx6VX5TO4t?usp=drive_link"
     },
     {
@@ -205,7 +205,7 @@ const Portfolio: React.FC = () => {
       title: 'Rigid Box',
       description: 'Premium paper gift bags with custom printing and handles.',
       type: 'boxes',
-      imageSrc: 'assets/portfolio/jewellery-box.jpg',
+      imageSrc: '7.jpg',
       link: "https://drive.google.com/drive/folders/177mp-Fz6XdnmO5jGdLxOiYNej883Dv7J"
     },
     {
@@ -214,7 +214,7 @@ const Portfolio: React.FC = () => {
       title: 'Paper Bags',
       description: 'High-end branded shopping bags for retail boutiques.',
       type: 'carry-bags',
-      imageSrc: 'assets/portfolio/paper-bags.jpg',
+      imageSrc: '8.jpg',
       link: "https://drive.google.com/drive/folders/1AkCrAeAqfisAnZd9EP8kZAsz_kCO8qe0"
     },
     {
@@ -223,7 +223,7 @@ const Portfolio: React.FC = () => {
       title: 'Jewellery Boxes',
       description: 'Elegant box designed specifically for engagement rings.',
       type: 'boxes',
-      imageSrc: 'WhatsApp Image 2025-03-15 at 19.59.08_04c57302.jpg',
+      imageSrc: '9.jpg',
       link: "https://drive.google.com/drive/folders/1km61MaFm5ZcUlh-MTiawMMNOsh6KqHN3"
     },
     {
@@ -232,7 +232,7 @@ const Portfolio: React.FC = () => {
       title: 'Accessories',
       description: 'Handcrafted wooden box for your accessories.',
       type: 'accessories',
-      imageSrc: 'assets/portfolio/accessories.jpg',
+      imageSrc: '10.jpg',
       link: "https://drive.google.com/drive/folders/1IG6OvJNtB3QfVNM_wrmexCen7Vfisndu?usp=drive_link"
     },
     {
@@ -241,7 +241,7 @@ const Portfolio: React.FC = () => {
       title: 'Visiting Cards',
       description: 'Personalized tags to complement your gift packaging.',
       type: 'custom',
-      imageSrc: 'assets/portfolio/visiting-cards.jpg',
+      imageSrc: '11.jpg',
       link: "https://drive.google.com/drive/folders/1vw8D1i3C94gv4xUp02Bu3tc-5tlZRFIA?usp=drive_link"
     },
     {
@@ -250,7 +250,7 @@ const Portfolio: React.FC = () => {
       title: 'Gift Envelopes',
       description: 'High-quality satin and grosgrain ribbons in various widths.',
       type: 'gifts',
-      imageSrc: 'assets/portfolio/gift-envelopes.jpg',
+      imageSrc: '12.jpg',
       link: "https://drive.google.com/drive/folders/1bsKobcyEl1O4O8zCgxucUJOHVqeDmoGc?usp=drive_link"
     }
   ];
