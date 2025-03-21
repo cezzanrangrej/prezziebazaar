@@ -76,7 +76,7 @@ const NavBar: React.FC = () => {
           <div className="flex-shrink-0">
             <a onClick={scrollToTop} href="#" className="flex items-center gap-2 sm:gap-3 cursor-pointer">
               <img 
-                src="/prezzie-porch/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
+                src="/lovable-uploads/95f9abca-d08f-4b34-9662-9ba1ab31ca2d.png" 
                 alt="Prezzie Bazaar - Your One-Stop Gift Hub" 
                 className={cn(
                   "transition-all duration-300",
